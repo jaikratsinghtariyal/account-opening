@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "label": "Application ID",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1e0ihld",
+        "columns": null
+      },
+      "id": "Field_12loi7x",
+      "key": "applicationId",
+      "description": "This is Application ID",
+      "readonly": true
+    },
+    {
+      "values": [
+        {
+          "label": "APPROVED",
+          "value": "APPROVED"
+        },
+        {
+          "label": "DECLINED",
+          "value": "DECLINED"
+        }
+      ],
+      "label": "Select",
+      "type": "select",
+      "layout": {
+        "row": "Row_0qs2on1",
+        "columns": null
+      },
+      "id": "Field_18b8i98",
+      "key": "decision",
+      "description": "Select Status"
+    },
+    {
+      "action": "submit",
+      "label": "Button",
+      "type": "button",
+      "layout": {
+        "row": "Row_0qx1kya",
+        "columns": null
+      },
+      "id": "Field_1lyxa6t"
+    }
+  ],
+  "type": "default",
+  "id": "user_task_form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.5.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.24.0"
+  },
+  "schemaVersion": 16
+}

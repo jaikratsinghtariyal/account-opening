@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_DecisionMatrix" name="Decision Matrix Definition" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.24.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.5.0">
+  <decision id="decisionMatrix" name="Decision Matrix">
+    <decisionTable id="DecisionTable_0fvsc6h" hitPolicy="ANY">
+      <input id="Input_1" label="Fraud Result">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>fraudResult</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0ohn5tt">
+          <text>"true","false"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0cny3n9" label="IDnV Result">
+        <inputExpression id="LiteralExpression_0oeo5m3" typeRef="string">
+          <text>idnvResult</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0olg8k2">
+          <text>"true","false"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0l5xz2j" label="Credit Decision Result">
+        <inputExpression id="LiteralExpression_0cbhsb3" typeRef="string">
+          <text>creditDecisionResult</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1g60ti3">
+          <text>"true","false"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Decision" name="decision" typeRef="string">
+        <outputValues id="UnaryTests_0829hzz">
+          <text>"DECLINED","APPROVED","REFERRED"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_1on0oj2">
+        <inputEntry id="UnaryTests_15cwmxd">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v6fcf3">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h37fcu">
+          <text>"true"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m3yzne">
+          <text>"DECLINED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03l4b91">
+        <inputEntry id="UnaryTests_0gpqn2e">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13c3cr9">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10soxvs">
+          <text>"true"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r8exe9">
+          <text>"REFERRED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_172kdwk">
+        <inputEntry id="UnaryTests_0csyxp4">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v656pn">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d1mpv0">
+          <text>"true"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ra88qd">
+          <text>"APPROVED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x3dez4">
+        <inputEntry id="UnaryTests_1r12r1h">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_161rqj7">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14rkepy">
+          <text>"false"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xqs84n">
+          <text>"REFERRED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f6s22m">
+        <inputEntry id="UnaryTests_1dbvgzh">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x4s4hb">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0veqd84">
+          <text>"true"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15r6png">
+          <text>"REFERRED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_143fs2f">
+        <inputEntry id="UnaryTests_14gwg6x">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_037i07l">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y9xvsh">
+          <text>"false"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08p5qb5">
+          <text>"REFERRED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kga5og">
+        <inputEntry id="UnaryTests_0a2v3yw">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1otkpp1">
+          <text>"true"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lqppei">
+          <text>"true"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uxujn8">
+          <text>"REFERRED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x04ggw">
+        <inputEntry id="UnaryTests_0zlvbc2">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1knne37">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qmhtve">
+          <text>"true"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0db67cm">
+          <text>"APPROVED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05anmli">
+        <inputEntry id="UnaryTests_1t560wq">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p8kxnv">
+          <text>null</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0csdyqg">
+          <text>"false"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04arj0f">
+          <text>"REFERRED"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="decisionMatrix">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
