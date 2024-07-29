@@ -1,15 +1,17 @@
 package org.example.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 
-import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Application {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int appid;
+    private Long appid;
 
     private String customername;
     private String dob;
@@ -64,11 +66,11 @@ public class Application {
         this.applicationstatus = applicationstatus;
     }
 
-    public int getAppid() {
+    public Long getAppid() {
         return appid;
     }
 
-    public void setAppid(int appid) {
+    public void setAppid(Long appid) {
         this.appid = appid;
     }
 

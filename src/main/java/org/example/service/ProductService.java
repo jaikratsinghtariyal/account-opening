@@ -16,6 +16,8 @@ public class ProductService {
     }
 
     public Boolean addProduct(Product product){
-        return reposiroty.onboardProduct(product.getCustomerid(), product.getProduct())==1;
+//        return reposiroty.onboardProduct(product.getCustomerid(), product.getProduct())==1;
+        return reposiroty.save(product).getProductid() > 0;
+
     }
 }

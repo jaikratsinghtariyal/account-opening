@@ -1,8 +1,9 @@
 package org.example.camunda;
 
 import io.camunda.zeebe.client.ZeebeClient;
-import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 @Component
 public class MyZeeBeeClient {

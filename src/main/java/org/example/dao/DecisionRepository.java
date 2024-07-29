@@ -1,13 +1,13 @@
 package org.example.dao;
 
-import org.example.models.Application;
+import org.example.models.Decision;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface DecisionRepository extends JpaRepository<Application, Long> {
+public interface DecisionRepository extends JpaRepository<Decision, Long> {
 
     @Query("select a.decision from Decision a where a.customername = :customerName and a.dob = :dob " +
             "and a.emailid = :emailId and a.postcode = :postCode")

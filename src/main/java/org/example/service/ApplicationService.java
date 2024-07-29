@@ -26,7 +26,7 @@ public class ApplicationService {
                 application.getPostcode()).isEmpty();
     }
 
-    public Integer createApplication(Application application) {
+    public Long createApplication(Application application) {
         return applicationRepository.save(application).getAppid();
     }
 
@@ -34,9 +34,9 @@ public class ApplicationService {
         applicationRepository.deleteById(Long.valueOf(applicationId));
     }
 
-    public Integer updateApplication(Application application) {
+    public Long updateApplication(Application application) {
 
-        Optional<Application> optionalEntity = applicationRepository.findById((long) application.getAppid());
+        Optional<Application> optionalEntity = applicationRepository.findById(application.getAppid());
 
         Application existingEntity = optionalEntity.get();
         existingEntity.setApplicationstatus(application.getApplicationstatus());

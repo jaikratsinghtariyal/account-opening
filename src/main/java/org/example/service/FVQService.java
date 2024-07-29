@@ -16,7 +16,8 @@ public class FVQService {
     }
 
     public void writeFVQ(FVQ fvq) {
-        if (repository.writeFVQ(fvq.getContent(), fvq.getApplicationstatus(), fvq.getApplicationid())==1) {
+        //if (repository.writeFVQ(fvq.getContent(), fvq.getApplicationstatus(), fvq.getApplicationid())==1) {
+        if (repository.save(fvq).getFvqid() > 0) {
             System.out.println("FVQ Written");
         }
     }

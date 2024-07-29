@@ -1,19 +1,22 @@
 package org.example;
 
 import io.camunda.zeebe.spring.client.EnableZeebeClient;
-import io.camunda.zeebe.spring.client.annotation.ZeebeDeployment;
 import org.example.models.*;
 import org.example.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.*;
+import io.camunda.zeebe.spring.client.config.ZeebeClientStarterAutoConfiguration;
 
 /**
  * Hello world!
  */
 @SpringBootApplication
 @RestController
+@EnableZeebeClient
+@Import(ZeebeClientStarterAutoConfiguration.class)
 public class App {
 
     @Autowired
@@ -81,19 +84,18 @@ public class App {
     }
 
     @PostMapping("/application")
-    public Integer createApplication(@RequestBody Application application) {
+    public Long createApplication(@RequestBody Application application) {
         application.setApplicationstatus("NEW");
         return applicationService.createApplication(application);
     }
 
     @PatchMapping("/application")
-    public Integer updateApplication(@RequestBody Application application) {
+    public Long updateApplication(@RequestBody Application application) {
         return applicationService.updateApplication(application);
     }
 
     @DeleteMapping("/application")
-    public void updateApplication(@RequestParam String applicationId) {
-        System.out.println("++++++++++++++++++++++++++++++++++++ " + applicationId);
+    public void deleteApplication(@RequestParam String applicationId) {
         applicationService.deleteApplication(applicationId);
     }
 
