@@ -13,6 +13,7 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long appid;
 
+    private long processinstancekey;
     private String customername;
     private String dob;
     private String mobilenumber;
@@ -32,6 +33,14 @@ public class Application {
                 ", emailid='" + emailid + '\'' +
                 ", postcode='" + postcode + '\'' +
                 '}';
+    }
+
+    public long getProcessinstancekey() {
+        return processinstancekey;
+    }
+
+    public void setProcessinstancekey(long processinstancekey) {
+        this.processinstancekey = processinstancekey;
     }
 
     public String getFraudresult() {
